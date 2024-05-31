@@ -3,6 +3,13 @@
 <html lang="pt-br">
 <head>
     {% include "global/partials/head.html" %}
+    <title>
+        {% if head_title %}
+            {{head_title}}
+        {% else %}
+            RedAI
+        {% endif %}
+    </title>
 </head>
 <body>
 

@@ -1784,6 +1784,10 @@ input::-moz-focus-inner {
   position: absolute;
   right: 40px;
   top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 }
 
 .header-nav-wrap .header-cta__btn {
@@ -2673,7 +2677,7 @@ html.no-csstransitions .home-content__main {
 }
 
 .about-desc__slider .slick-dots li button {
-  background: #433a6e;
+  background: #5C8EF2;
 }
 
 .about-desc__slider .slick-dots li.slick-active button,
@@ -2752,7 +2756,7 @@ html.no-csstransitions .home-content__main {
 
 @media only screen and (max-width:500px) {
   .s-about {
-    padding-bottom: calc((52rem/2) + 9.6rem);
+    padding-bottom: 12rem;
   }
 
 }
@@ -3710,7 +3714,7 @@ html.no-csstransitions .home-content__main {
  * ------------------------------------------------------------------- */
 .s-footer {
   background-color: #121619;
-  padding-top: 18.4rem;
+  padding-top: 1rem;
   padding-bottom: 4.8rem;
   color: rgba(255, 255, 255, 0.4);
   position: relative;
@@ -3993,7 +3997,7 @@ html.no-csstransitions .home-content__main {
 .go-top a:hover,
 .go-top a:focus,
 .go-top a:active {
-  background-color: #514686;
+  background-color: #5C8EF2;
 }
 
 .go-top.link-is-visible {
@@ -4037,7 +4041,7 @@ html.no-csstransitions .home-content__main {
 
 @media only screen and (max-width:600px) {
   .s-footer {
-    padding-top: 12rem;
+    padding-top: 1rem;
     padding-bottom: 4rem;
   }
 

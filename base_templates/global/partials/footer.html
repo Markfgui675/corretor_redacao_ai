@@ -1,16 +1,20 @@
+{% load static %}
 <footer class="s-footer footer">
+
+        <div class="row section-header align-center">
+            <div class="col-full">
+                <img src="{% static "global/images/logo_corretor_ai.png" %}" alt="RedAI" srcset="">
+            </div>
+        </div>
 
         <div class="row footer__bottom">
 
             <div class="footer__about col-five tab-full left">
 
-                <h4>Sobre RedAI.</h4>
+                <h4>Sobre o RedAI.</h4>
 
                 <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed 
-                do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                laboris nisi ut aliquip ex consectetur adipisicing elit do eiusmod tempor.
+                O RedAI foi desenvolvido para corrigir redações do Enem é um sistema avançado de aprendizado de máquina treinado especificamente para avaliar textos conforme os critérios estabelecidos pelo Exame Nacional do Ensino Médio (Enem). Utilizando uma vasta base de dados composta por redações anteriores, a IA foi calibrada para entender e aplicar as cinco competências avaliadas no Enem.
                 </p>
 
                 <ul class="footer__social">
@@ -30,7 +34,7 @@
                             <li><a href="#home" class="smoothscroll">Início</a></li>
                             <li><a href="#about" class="smoothscroll">Sobre</a></li>
                             <li><a href="{% url "corretor-ia" %}" class="smoothscroll" target="_blank">Corretor</a></li>
-                            <li><a href="#">Política de privacidade</a></li>
+                            <li><a href="{% url "politica" %}">Política de privacidade</a></li>
                         </ul>
                     </div>
 
@@ -38,7 +42,7 @@
                         <h4>Desenvolvido por</h4>
 
                         <p>
-                        <a href="https://www.linkedin.com/in/marcos-fellipe-guimarães-b503b51b3/" target="_blank">Marcos Fellipe Guimarães</a>
+                        <a href="https://www.linkedin.com/in/marcos-fellipe-guimarães-b503b51b3/" target="_blank">Marcos Fellipe Guimarães</a><br>
                         Tel: +55 61 98212-7327
                         </p>
                         <p>
@@ -58,7 +62,7 @@
         </div> <!-- end footer__bottom -->
 
         <div class="go-top">
-            <a class="smoothscroll" title="Back to Top" href="#top"></a>
+            <a class="smoothscroll" title="Back to Top" href="#home"></a>
         </div>
 
     </footer>
