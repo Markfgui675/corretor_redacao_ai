@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% include "global/partials/head.html" %}
+</head>
+<body>
+
+    <div id="preloader">
+        <div id="loader" class="dots-jump">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    
+    {% include "global/partials/header.html" %}
+
+    {% block content %}{% endblock content %}
+
+    {% include "global/partials/footer.html" %}
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="{% static "global/js/jquery-3.2.1.min.js" %}"></script>
+    <script src="{% static "global/js/plugins.js" %}"></script>
+    <script src="{% static "global/js/main.js" %}"></script>
+
+    {% block extra_js %}
+        
+    {% endblock extra_js %}
+
+</body>
+</html>
