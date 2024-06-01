@@ -46,6 +46,10 @@
     gap: 16px;
 }
 
+.container-corretor .box-send{
+    width: 90%;
+}
+
 textarea.box-send-textarea:hover, textarea.box-send-textarea:focus{
     border: 1px solid #add9c5;
 }
