@@ -3,6 +3,33 @@
 
 {% block content %}
 
+    <header class="s-header">
+
+        <div class="row">
+            <div class="header-logo">
+                <a class="site-logo" href="{% url "index" %}">
+                    <img src="{% static "global/images/logo_corretor_ai.png" %}" alt="Homepage">
+                </a>
+            </div>
+    
+            <nav class="header-nav-wrap">
+                <ul class="header-main-nav">
+                    <li class="current"><a class="smoothscroll" href="#home" title="intro">Início</a></li>
+                    <li><a class="smoothscroll" href="#about" title="about">Sobre</a></li>
+                </ul>
+    
+                <div class="header-cta">
+                    <a>Versão beta</a>
+                    
+                    <a href="{% url "corretor-ia" %}" class="btn btn--primary header-cta__btn">Começar</a>
+                </div>
+            </nav> <!-- end header-nav-wrap -->
+    
+            <a class="header-menu-toggle" href="#"><span>Menu</span></a>
+        </div>
+
+    </header>
+
     <!-- home
     ================================================== -->
     <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="{% static "global/images/hero-bg.jpg" %}" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
@@ -131,25 +158,25 @@
 
                     <div class="col-block step">
                         <h3 class="item-title">Envie a sua redação</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+                        <p>Você escreve e envia a sua redação para o RedAI clicando no botão 'analisar'.
                         </p> 
                     </div>
 
                     <div class="col-block step">
                         <h3 class="item-title">O RedAI a corrige</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+                        <p>O RedAI analisa a sua redação com base nas 5 competências do Enem.
                         </p> 
                     </div>
                
                     <div class="col-block step">
                         <h3 class="item-title">Feedbacks</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+                        <p>Após a análise, o RedAI te envia os feedbacks da sua redação, com a pontuação e avaliação de cada competência. 
                         </p> 
                     </div>
 
                     <div class="col-block step">
-                        <h3 class="item-title">Send</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+                        <h3 class="item-title">Sugestão de melhorias</h3>
+                        <p>O RedAI vai te sugerir melhorias para a sua próxima redação.
                         </p> 
                     </div>  
 

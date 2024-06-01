@@ -10,6 +10,7 @@
             RedAI
         {% endif %}
     </title>
+    {% block extra_css %}{% endblock extra_css %}
 </head>
 <body>
 
@@ -20,8 +21,6 @@
             <div></div>
         </div>
     </div>
-    
-    {% include "global/partials/header.html" %}
 
     {% block content %}{% endblock content %}
 

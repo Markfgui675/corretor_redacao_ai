@@ -1,3 +1,64 @@
 {% extends "global/base.html" %}
+{% load static %}
 
-{% block content %}{% endblock content %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static "global/css/corretor.css" %}">
+{% endblock extra_css %}
+
+
+
+{% block content %}
+
+<header class="s-header-corretor">
+
+    <div class="row">
+        <div class="header-logo">
+            <a class="site-logo" href="{% url "index" %}">
+                <img src="{% static "global/images/logo_corretor_ai.png" %}" alt="Homepage">
+            </a>
+        </div>
+
+        <nav class="header-nav-wrap">
+            <ul class="header-main-nav">
+                <li class="current"><a href="{% url "index" %}" title="intro">Início</a></li>
+                <li><a href="{% url "index" %}#about" title="about">Sobre</a></li>
+            </ul>
+            <div class="header-cta">
+                <a>Versão beta</a>
+            </div>
+        </nav> <!-- end header-nav-wrap -->
+
+        <a class="header-menu-toggle" href="#"><span>Menu</span></a>
+    </div>
+
+</header>
+
+<div class="info">
+    <h1>Redação</h1>
+</div>
+
+<div class="container-corretor">
+
+
+    {% if comentario %}
+        <div class="box-corretor">
+            {{comentario.comentario}}
+        </div>
+    {% else %}
+        <div class="box-send">
+            <div class="redacao">
+                <form action="{{ form_action }}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {{field}}
+                    {% endfor %}
+                    <button type="submit" class="btn btn--primary header-cta__btn redacao-button">Enviar</button>
+                </form>
+            </div>
+            <div class="submit"></div>
+        </div>
+    {% endif %}
+
+</div>
+
+{% endblock content %}
