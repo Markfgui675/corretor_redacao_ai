@@ -8,6 +8,7 @@ from corretor_ia.inteligencia.corretor import corretor_redacao
 
 def index(request):
     context = {
+        'index':True,
         'head_title':'RedAI - beta'
     }
     return render(request, 'corretor_ia/index.html', context=context)
@@ -15,7 +16,7 @@ def index(request):
 def redacaoAvaliacao(request, id):
     comentario = RedacaoComentario.objects.filter(id=id).first()
     context = {
-        'head_title':'Deu certo',
+        'head_title':'RedAI - avaliação de redação',
         'comentario':comentario
     }
     return render(request, 'corretor_ia/corretor.html', context=context)
