@@ -5,6 +5,7 @@ import pathlib
 import markdown
 from IPython.display import display
 from IPython.display import Markdown
+from decouple import config
 
 def to_markdown(text):
     text = text.replace('•', '  *')
@@ -12,7 +13,7 @@ def to_markdown(text):
 
 def corretor_redacao(redacao: str) -> RedacaoComentario:
 
-    genai.configure(api_key="AIzaSyAOnM_4fWhqEG6eJ4rGib_zLK2K3G53RhE")
+    genai.configure(api_key=config('api_key'))
 
     # Set up the model
     generation_config = {
