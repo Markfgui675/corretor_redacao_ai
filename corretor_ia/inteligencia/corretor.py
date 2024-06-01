@@ -6,12 +6,13 @@ import markdown
 from IPython.display import display
 from IPython.display import Markdown
 from decouple import config
+from django.contrib.auth.models import User
 
 def to_markdown(text):
     text = text.replace('•', '  *')
     return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
 
-def corretor_redacao(redacao: str) -> RedacaoComentario:
+def corretor_redacao(redacao: str, user: User) -> RedacaoComentario:
 
     genai.configure(api_key=config('api_key'))
 
@@ -78,6 +79,8 @@ def corretor_redacao(redacao: str) -> RedacaoComentario:
     response = markdown.markdown(response.data)
 
     comentario = RedacaoComentario.objects.create(comentario=str(response))
+
+    user.avaliacoes.add(comentario)
 
     return comentario
 

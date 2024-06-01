@@ -6,5 +6,5 @@ class Redacao(models.Model):
 
 class RedacaoComentario(models.Model):
     comentario = models.TextField(verbose_name='Comentário')
-    avaliacoes = models.ManyToManyField(User, null=True, related_name='favoritos')
+    avaliacoes = models.ManyToManyField(User, null=True, related_name='avaliacoes')
 

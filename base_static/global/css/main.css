@@ -2867,6 +2867,44 @@ html.no-csstransitions .home-content__main {
   margin-right: 2rem;
 }
 
+.title-register{
+  margin-top: 12rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-register{
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+.container-register .form{
+  width: 30%;
+}
+
+.message{
+  max-width: 600px;
+  margin: 1.5rem auto;
+  margin-top: calc(1.5rem*2);
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 1.4rem;
+}
+.message.success{
+  background: green;
+  border: 0.3rem solid greenyellow;
+}
+.message.error{
+  background: red;
+  border: rgba(255, 0, 0, 0.445);
+}
+
+
 
 /* ------------------------------------------------------------------- 
  * ## process
@@ -3082,6 +3120,10 @@ html.no-csstransitions .home-content__main {
     left: 8px;
   }
 
+  .container-register .form {
+    width: 50%;
+  }
+
 }
 
 @media only screen and (max-width:600px) {
@@ -3098,6 +3140,10 @@ html.no-csstransitions .home-content__main {
     height: 96px;
     width: 96px;
     background-size: 20px 22px;
+  }
+
+  .container-register .form {
+    width: 100%;
   }
 
 }
