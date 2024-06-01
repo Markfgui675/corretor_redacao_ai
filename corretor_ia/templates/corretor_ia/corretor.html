@@ -34,7 +34,9 @@
 </header>
 
 <div class="info">
-    <h1>Redação</h1>
+    {% if not comentario %}
+        <h1>Escreva sua redação</h1>
+    {% endif %}
 </div>
 
 <div class="container-corretor">
@@ -42,7 +44,7 @@
 
     {% if comentario %}
         <div class="box-corretor">
-            {{comentario.comentario}}
+            {{comentario.comentario|safe}}
         </div>
     {% else %}
         <div class="box-send">

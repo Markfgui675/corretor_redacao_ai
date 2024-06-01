@@ -2,9 +2,13 @@ import google.generativeai as genai
 from corretor_ia.models import RedacaoComentario
 import textwrap
 import pathlib
+import markdown
 from IPython.display import display
 from IPython.display import Markdown
 
+def to_markdown(text):
+    text = text.replace('•', '  *')
+    return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
 
 def corretor_redacao(redacao: str) -> RedacaoComentario:
 
@@ -69,7 +73,8 @@ def corretor_redacao(redacao: str) -> RedacaoComentario:
     )
 
     response = model.generate_content(redacao)
-    print(response.candidates[0])
+    response = to_markdown(response.text)
+    response = markdown.markdown(response.data)
 
     comentario = RedacaoComentario.objects.create(comentario=str(response))
 

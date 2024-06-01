@@ -51,9 +51,8 @@ textarea.box-send-textarea:hover, textarea.box-send-textarea:focus{
 }
 
 .container-corretor .box-corretor{
-    max-width: 800px;
+    max-width: 1400px;
     min-height: 500px;
-    border: 0.3rem solid #5C8EF2;
-    border-radius: 10px;
+    margin-bottom: 12rem;
 }
 
