@@ -114,6 +114,9 @@ a:hover,
 a:active {
   outline: 0;
 }
+.button-entrar:hover{
+  color: #5C8EF2;
+}
 
 
 
@@ -2038,7 +2041,6 @@ input::-moz-focus-inner {
 }
 
 
-
 /* ===================================================================
  * # home
  *
@@ -2881,12 +2883,33 @@ html.no-csstransitions .home-content__main {
   margin-top: 2rem;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2rem;
 }
 .container-register .form{
   width: 30%;
+}
+
+.form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form form{
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+.form form .box-button{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .message{

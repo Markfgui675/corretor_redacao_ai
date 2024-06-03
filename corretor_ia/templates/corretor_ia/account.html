@@ -1,0 +1,47 @@
+{% extends "global/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static "global/css/corretor.css" %}">
+    <link rel="stylesheet" href="{% static "global/css/account.css" %}">
+{% endblock extra_css %}
+
+
+
+{% block content %}
+
+<div class="info">
+    {% if not comentario %}
+        <h1>Escreva sua redação</h1>
+    {% endif %}
+</div>
+
+<div class="container-corretor">
+
+
+    {% if comentario %}
+        <div class="box-corretor">
+            {{comentario.comentario|safe}}
+        </div>
+    {% else %}
+        <div class="box-send">
+            <div class="redacao">
+                <form action="{{ form_action }}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {{field}}
+                    {% endfor %}
+                    <button type="submit" class="btn btn--primary header-cta__btn redacao-button">Enviar</button>
+                </form>
+            </div>
+            <div class="submit"></div>
+        </div>
+    {% endif %}
+
+</div>
+
+{% endblock content %}
+
+{% block extra_js %}
+    <script src="{% static "global/js/load.js" %}">
+{% endblock extra_js %}
