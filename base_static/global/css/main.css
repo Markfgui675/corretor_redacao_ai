@@ -2133,6 +2133,9 @@ input::-moz-focus-inner {
 .home-content__left {
   width: calc(100% - (580px + 80px));
 }
+.home-content__left h3{
+  color: rgba(255, 255, 255, 0.925);
+}
 
 .home-content__right {
   z-index: 500;
@@ -2887,6 +2890,7 @@ html.no-csstransitions .home-content__main {
 }
 
 .message{
+  margin-top: 12rem;
   max-width: 600px;
   margin: 1.5rem auto;
   margin-top: calc(1.5rem*2);
@@ -2896,12 +2900,16 @@ html.no-csstransitions .home-content__main {
   font-size: 1.4rem;
 }
 .message.success{
+  margin-top: 12rem;
   background: green;
   border: 0.3rem solid greenyellow;
+  color: white;
 }
 .message.error{
+  margin-top: 12rem;
   background: red;
   border: rgba(255, 0, 0, 0.445);
+  color: white;
 }
 
 

@@ -53,7 +53,6 @@ def sendRedacao(request):
 def register_view(request):
     register_form_data = request.session.get('register_form_data', None)
     form = RegisterForm(register_form_data)
-
     context = {
         'form':form,
         'text_button':'Criar conta',
@@ -71,7 +70,6 @@ def register_create(request):
     form = RegisterForm(POST)
 
     if form.is_valid():
-        messages.success(request, 'Conta criada com sucesso')
         user = form.save(commit=False)
         user.set_password(user.password)
         user.save()

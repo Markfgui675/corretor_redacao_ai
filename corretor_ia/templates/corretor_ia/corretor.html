@@ -9,30 +9,6 @@
 
 {% block content %}
 
-<header class="s-header-corretor">
-
-    <div class="row">
-        <div class="header-logo">
-            <a class="site-logo" href="{% url "index" %}">
-                <img src="{% static "global/images/logo_corretor_ai.png" %}" alt="Homepage">
-            </a>
-        </div>
-
-        <nav class="header-nav-wrap">
-            <ul class="header-main-nav">
-                <li class="current"><a href="{% url "index" %}" title="intro">Início</a></li>
-                <li><a href="{% url "index" %}#about" title="about">Sobre</a></li>
-            </ul>
-            <div class="header-cta">
-                <a>Versão beta</a>
-            </div>
-        </nav> <!-- end header-nav-wrap -->
-
-        <a class="header-menu-toggle" href="#"><span>Menu</span></a>
-    </div>
-
-</header>
-
 <div class="info">
     {% if not comentario %}
         <h1>Escreva sua redação</h1>
