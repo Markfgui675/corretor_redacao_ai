@@ -13,7 +13,7 @@ class RedacaoForm(forms.ModelForm):
             'redacao':forms.Textarea(
                 attrs={
                     'placeholder':'Sua redação aqui',
-                    'class':'box-send-textarea',
+                    'class':'box-send-textarea full-width',
                     'cols':'80',
                     'rows':'5'
                 }
