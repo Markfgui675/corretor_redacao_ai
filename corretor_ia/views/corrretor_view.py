@@ -5,16 +5,21 @@ from django.shortcuts import redirect
 from django.shortcuts import render
 from django.urls import reverse
 from django.http import Http404
+from django.contrib.auth.decorators import login_required
 
-
+@login_required(login_url='login-view', redirect_field_name='next')
 def redacaoAvaliacao(request, id):
     comentario = RedacaoComentario.objects.filter(id=id).first()
     context = {
         'head_title':'RedAI - avaliação de redação',
         'comentario':comentario
     }
-    return render(request, 'corretor_ia/corretor.html', context=context)
+    if comentario.avaliacoes.all().first() == request.user:
+        return render(request, 'corretor_ia/corretor.html', context=context)
+    else:
+        return render(request, 'corretor_ia/index.html')
 
+@login_required(login_url='login-view', redirect_field_name='next')
 def corretor(request):
     redacao_form_data = request.session.get('redacao_form_data', None)
     form = RedacaoForm(redacao_form_data)
