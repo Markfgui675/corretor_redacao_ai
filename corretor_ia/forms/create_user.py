@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.models import User
+from corretor_ia.models import CustomUser
 from django.core.exceptions import ValidationError
 
 class RegisterForm(forms.ModelForm):
@@ -67,7 +67,7 @@ class RegisterForm(forms.ModelForm):
     )
     
     class Meta:
-        model = User
+        model = CustomUser
         fields = ['first_name', 'last_name', 'username', 'email', 'password']
         help_texts = {
             'email':'O e-mail deve ser válido'

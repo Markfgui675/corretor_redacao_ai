@@ -1,5 +1,6 @@
 from corretor_ia.forms.login_user import LoginForm
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.shortcuts import redirect
 from django.shortcuts import render
@@ -25,7 +26,7 @@ def login_create(request):
 
     if form.is_valid():
         authenticated_user = authenticate(
-            username=form.cleaned_data.get('username', ''),
+            email=form.cleaned_data.get('email', ''),
             password=form.cleaned_data.get('password', '')
         )
 
@@ -37,6 +38,18 @@ def login_create(request):
             messages.error(request, 'Credenciais inválidas')
     return redirect(reverse('login-view'))
 
+@login_required(login_url='login-view', redirect_field_name='next')
+def logout_view(request):
+    if not request.POST:
+        return redirect(reverse('login-view'))
+    
+    if request.POST.get('email') != request.user.email:
+        return redirect(reverse('login-view'))
+
+    logout(request)
+    return redirect(reverse('index'))
+
+@login_required(login_url='login-view', redirect_field_name='next')
 def my_account(request):
     context = {
         'head_title':'RedAI - conta'

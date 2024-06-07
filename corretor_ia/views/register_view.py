@@ -31,7 +31,7 @@ def register_create(request):
         user.set_password(user.password)
         user.save()
         authenticated_user = authenticate(
-            username=form.cleaned_data.get('username', ''),
+            email=form.cleaned_data.get('email', ''),
             password=form.cleaned_data.get('password', '')
         )
         login(request, authenticated_user)
