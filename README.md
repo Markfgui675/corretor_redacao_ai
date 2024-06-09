@@ -8,7 +8,7 @@ O RedAI é uma inteligência artificial treinada especificamente para avaliar te
 
 Em desenvolvimento
 
- - versão: [beta v0.0.8](https://github.com/Markfgui675/corretor_redacao_ai/releases/tag/v0.0.8)
+ - versão: [alfa v0.0.8](https://github.com/Markfgui675/corretor_redacao_ai/releases/tag/v0.0.8)
 
 ## Descrição:
 
